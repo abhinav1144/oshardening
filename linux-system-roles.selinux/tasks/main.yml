@@ -1,19 +1,19 @@
 ---
-#- name: Install SELinux python2 tools
-# package:
-#   name:
-#     - libselinux-python
-#     - policycoreutils-python
-#   state: present
-# when: "ansible_python_version is version('3', '<')"
+- name: Install SELinux python2 tools
+  package:
+   name:
+     - python-selinux
+     - policycoreutils-python-utils
+   state: present
+ when: "ansible_python_version is version('3', '<')"
 
-#- name: Install SELinux python3 tools
-# package:
-#   name:
-#     - libselinux-python3
-#     - policycoreutils-python3
-#   state: present
-# when: "ansible_python_version is version('3', '>=')"
+- name: Install SELinux python3 tools
+  package:
+   name:
+     - python3-selinux
+     - policycoreutils-python3-utils
+   state: present
+ when: "ansible_python_version is version('3', '>=')"
 
 - name: refresh facts
   setup:
