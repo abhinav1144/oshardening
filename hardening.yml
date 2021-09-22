@@ -1,0 +1,10 @@
+- name: System Hardening
+  hosts: localhost
+  become: yes
+  gather_facts: true
+  roles:
+    - os-hardening
+    - ssh-hardening
+    - linux-system-roles.selinux
+
+    
