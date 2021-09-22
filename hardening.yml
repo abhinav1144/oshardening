@@ -1,6 +1,7 @@
 - name: System Hardening
-  hosts: localhost
+  hosts: db
   become: yes
+  become_method: sudo
   gather_facts: true
   roles:
     - os-hardening
